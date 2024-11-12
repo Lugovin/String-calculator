@@ -8,8 +8,8 @@ public class Parse {
     boolean isString = false;
 
 
-    public String firstVar(String text) {
-        try {
+    public String firstVar(String text) throws Exception {
+
             char[] symbols = text.toCharArray();// Собираем первую переменную, она всегда строковая
             if (symbols[0] != '"') {
                 throw new Exception("Ошибка! Проверь как введена первая переменная!");
@@ -23,16 +23,12 @@ public class Parse {
                     break;
                 }
             }
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
-
-        }
         return var;
     }
 
 
-        public String operation (String text){  // Выдергиваем математическое действие
-            try {
+        public String operation (String text) throws Exception{  // Выдергиваем математическое действие
+
                 char[] symbols = text.toCharArray();
                 var = "";
                 int n = symbols.length;
@@ -46,16 +42,12 @@ public class Parse {
                 } else {
                     throw new Exception("Ошибка! Проверь как введен знак математического действия!");
                 }
-
-            } catch (Exception ex) {
-                System.out.println(ex.getMessage());
-            }
             return var;
         }
 
 
-        public String secondVar (String text){     // Собираем вторую переменную
-            try {
+        public String secondVar (String text) throws Exception{     // Собираем вторую переменную
+
                 char[] symbols = text.toCharArray();
                 var = "";
                 int n = symbols.length;
@@ -95,10 +87,6 @@ public class Parse {
                 } else {
                     throw new Exception("Ошибка! Проверь как введена вторая переменная!");
                 }
-
-            } catch (Exception ex) {
-                System.out.println(ex.getMessage());
-            }
             return var;
         }
 
